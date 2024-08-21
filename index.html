@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Countrys List</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="py-5 shadow-lg bg-white flex items-center justify-between px-5">
+        <a href="/">
+            <h1 class="text-2xl font-bold text-teal-800">Countrys List </h1>
+        </a>
+        <div class="flex items-center gap-5">
+            <button onclick="handleLikeCountBtnClick()" class="w-[60px] h-[60px] flex items-center text-[16px] rounded-[50%] border-[1px]  gap-[6px] px-[5px]  text-red-600">
+                <span class="like-count">(0)</span>
+                <img src="./images/like.svg" alt="like img" width="20" height="20" style="background-color:red">
+            </button>
+            <button onclick="handleSavedCountBtnClick()"  class="w-[60px] h-[60px] flex items-center text-[16px] rounded-[50%] border-[1px]  gap-[6px] px-[5px] text-green-600 ">
+                <span class="saved-count">(0)</span>
+                <img src="./images/saved.svg" alt="save img" width="20" height="20" style="background-color:blue">
+            </button>
+            <button id="moon" class="w-[60px] h-[60px] flex items-center justify-center rounded-[50%] border-[3px] border-black-600 px-[5px]  ">
+               <img width="40" height="40" src="./images/moon.svg" alt="Moon img">
+            </button>
+            <button id="sun" class="w-[60px] h-[60px] flex items-center justify-center rounded-[50%] border-[3px] border-black-600 px-[7px] hidden ">
+                <img width="40" height="40" src="./images/sun.svg" alt="Sun img">
+             </button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container w-[1200px] mx-auto px-[20px]">
+                <div class="hero py-[10px] mt-[20px] flex justify-between">
+                    <input class="search__input w-[200px] p-2 border-cyan-700 border-[1px] rounded-[10px]" type="text" placeholder="Searching...">
+                    <select class="country-select  w-[200px] p-2 border-cyan-700 border-[1px] rounded-[10px] cursor-pointer"  name="" id="">
+                        <option value="all">All</option>
+                    </select>
+                </div>
+                <ul class="country-list mt-[30px] flex flex-wrap justify-between gap-[15px]"></ul>
+            </div>
+        </section>
+    </main>
+    <div id="wrapper" class="modul-wrapper fixed top-0 bottom-0 left-0 right-0 backdrop-blur duration-300 scale-0">
+        <div class="modul-inner absolute w-[650px] h-[500px] bg-slate-500 shadow-lg rounded-lg m-auto top-0 bottom-0 left-0 right-0">
+            <button onclick="closeBtnClick()" class="absolute top-0 right-0">
+                <img class="pt-[7px] pr-[7px]" src="./images/close.svg" alt="" width="50" height="50">
+            </button>
+            <div class="modal-contant"></div>
+        </div>
+    </div>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

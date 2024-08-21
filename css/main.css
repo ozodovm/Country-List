@@ -1,0 +1,24 @@
+:root{
+    --dark_bg: white ;
+    --text-clr:white;
+    --nav_bg:white;
+    --h1:black;
+}
+.dark_bg{
+    --dark_bg: #1F2937 ;
+    --text-clr:white;
+    --nav_bg:#1F2937;
+    --h1:white;
+}
+header{
+    background-color: var(--nav_bg) !important;
+}
+body{
+    background-color: var(--dark_bg)
+}
+header h1{
+    color: var(--h1);
+}
+.flex{
+    display: flex;
+}
